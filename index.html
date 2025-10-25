@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internet Usage Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="highlight-date" id="today"></div>
+  <div class="container">
+    <div class="header">
+      <h1>Internet Usage Calculator</h1>
+      <img src="photo.jpg" class="logo" alt="logo" />
+    </div>
+
+    <div class="input-section">
+      <label for="endDate" class="date-label">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Calendar Icon"/>
+        End Date:
+      </label>
+      <input type="date" id="endDate" />
+
+      <label for="totalAmount">Available Internet:</label>
+      <div class="input-flex">
+        <input type="number" id="totalAmount" placeholder="Enter Value" min="0" step="any" />
+        <select id="unitSelect">
+          <option value="GB">GB</option>
+          <option value="MB">MB</option>
+        </select>
+      </div>
+
+      <button id="calculateBtn" class="btn-calc">Calculate</button>
+      <button id="clearBtn" class="btn-clear">Clear Data</button>
+    </div>
+
+    <div class="result-section" id="resultSection">
+      <h2>Result</h2>
+      <p id="remainingDays"></p>
+      <p id="dailyAverage"></p>
+    </div>
+
+    <div class="list-section" id="listSection">
+      <h2>Daily Usage Plan</h2>
+      <p class="toggle-table" id="toggleTable" role="button">Show Table</p>
+
+      <table id="dailyTable">
+        <thead>
+          <tr><th>Date</th><th>Remaining</th></tr>
+        </thead>
+        <tbody id="dailyTableBody"></tbody>
+      </table>
+
+      <div id="downloadButtons">
+        <button id="downloadJPG" class="btn-download"><i class="fa-solid fa-image"></i> Download JPG</button>
+        <button id="downloadPDF" class="btn-download"><i class="fa-solid fa-file-pdf"></i> Download PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 | Abdullah Al Khalid
+    <br />
+    <i class="fab fa-github" style="color: #333;"></i>
+    <span>GitHub:</span>
+    <a href="https://github.com/With-ALIF" target="_blank">WITH ALIF</a>
+  </footer>
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
